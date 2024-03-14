@@ -6,7 +6,7 @@ const estilos = tema => {
       fontFamily: tema.fontFamily
     },
     body: {
-      margin: 0
+      margin: 0,
     }
   };
 };
