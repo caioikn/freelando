@@ -12,7 +12,6 @@ export const Cabecalho = () => {
   return (
     <HeaderEstilizada>
       <h2>Freelando</h2>
-
       <button>Login</button>
     </HeaderEstilizada>
   );
