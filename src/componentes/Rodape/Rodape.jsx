@@ -27,22 +27,22 @@ export const Rodape = () => {
             <Tipografia variante='legenda' componente='legenda'>Acesse nossas redes:</Tipografia>
             <ListaLink>
               <li>
-                <a href="#" aria-label='Link para WhatsApp'>
+                <a href="index.html" aria-label='Link para WhatsApp'>
                   <IconeWhatsApp />
                 </a>
               </li>
               <li>
-                <a href="#" aria-label='Link para Twitch'>
+                <a href="index.html" aria-label='Link para Twitch'>
                   <IconeTwitch />
                 </a>
               </li>
               <li>
-                <a href="#" aria-label='Link para WhatsApp'>
+                <a href="index.html" aria-label='Link para WhatsApp'>
                   <IconeInstagram />
                 </a>
               </li>
               <li>
-                <a href="#" aria-label='Link para WhatsApp'>
+                <a href="index.html" aria-label='Link para WhatsApp'>
                   <IconeTwitter />
                 </a>
               </li>
