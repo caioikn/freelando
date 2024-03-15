@@ -18,6 +18,7 @@ const InputEstilizado = styled.input`
   font-weight: 400;
   height: 40px;
   line-height: 17px;
+  margin-bottom: ${props => props.theme.espacamentos.s};
   margin-top: ${props => props.theme.espacamentos.xs};
   outline: none;
   padding: 0 ${props => props.theme.espacamentos.s};

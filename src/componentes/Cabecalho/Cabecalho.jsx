@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { FreelandoLogo } from '../Icones/IconeFreelando';
 
 const HeaderEstilizada = styled.header`
   align-items: center;
@@ -8,11 +9,26 @@ const HeaderEstilizada = styled.header`
   padding: ${props => props.theme.espacamentos.m} 120px;
 `;
 
+const ButtonEstilizado = styled.button`
+  background: transparent;
+  border: none;
+  color: ${props => props.theme.cores.neutras.c};
+  font-family: ${props => props.theme.fontFamily};
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  cursor: pointer;
+
+  &:hover {
+    color: ${props => props.theme.cores.dark.a};
+  }
+`;
+
 export const Cabecalho = () => {
   return (
     <HeaderEstilizada>
-      <h2>Freelando</h2>
-      <button>Login</button>
+      <FreelandoLogo />
+      <ButtonEstilizado>Login</ButtonEstilizado>
     </HeaderEstilizada>
   );
 };
