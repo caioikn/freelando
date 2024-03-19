@@ -6,10 +6,10 @@ const estilos = tema => {
       fontFamily: tema.fontFamily
     },
     body: {
-      boxSizing: 'border-box',
       margin: 0,
+      overflowX: 'hidden',
       padding: 0
-    }
+    },
   };
 };
 
