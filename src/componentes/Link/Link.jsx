@@ -1,23 +1,26 @@
 import styled from '@emotion/styled';
 
 const LinkPrimario = styled.a`
+    color: ${props => props.theme.cores.branco};
     cursor: pointer;
-    font-weight: 400;
     font-size: 20px;
     line-height: 24px;
+    font-weight: 400;
     text-decoration: none;    
-    color: ${props => props.theme.cores.branco};
+
     &:hover {
         color: ${props => props.theme.cores.dark.a};
     }
 `;
 
 const LinkSecundario = styled.a`
-    cursor: pointer;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
     color: ${props => props.theme.cores.primarias.b};
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: none;
+
     &:hover {
         font-weight: bold;
         border-bottom: 1px solid ${props => props.theme.cores.primarias.b};

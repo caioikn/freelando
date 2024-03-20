@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import GrupoRadio from '../../componentes/Radio/GrupoRadio';
-import { Tipografia } from '../../componentes/Tipografia/Tipografia';
 import { Col, Row } from 'react-grid-system';
 import { Botao } from '../../componentes/Botao/Botao';
 import { Link } from 'react-router-dom';
+import CabecalhoCadastro from '../../componentes/CabecalhoCadastro/CabecalhoCadastro';
 
 const opcoes = [
   {
@@ -36,13 +36,11 @@ const Interesses = () => {
   const [opcao, setOpcao] = useState('');
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <Tipografia variante='h1' componente='h1'>
-        Crie seu cadastro
-      </Tipografia>
-      <Tipografia variante='h3' componente='h2'>
-        Qual a área de interesse?
-      </Tipografia>
+    <>
+      <CabecalhoCadastro
+        titulo='Crie seu cadastro'
+        subtitulo='Qual a área de interesse?'
+      />
       <GrupoRadio
         opcoes={opcoes}
         valor={opcao}
@@ -50,7 +48,7 @@ const Interesses = () => {
       />
       <Row>
         <Col lg={6} md={6} sm={6}>
-          <Link to='/cadastro'>
+          <Link to='/cadastro' style={{ textDecoration: 'none' }}>
             <Botao variante='secundaria'>
               <img src="../arrow-back.svg" alt="" />
               Anterior
@@ -68,7 +66,7 @@ const Interesses = () => {
           </div>
         </Col>
       </Row>
-    </div>
+    </>
   );
 };
 

@@ -14,6 +14,7 @@ const BotaoPrimarioEstilizado = styled.button`
   gap: ${props => props.theme.espacamentos.xs};
   line-height: 20px;
   padding: 10px ${props => props.theme.espacamentos.s};
+  text-decoration: none;
 
   &:hover {
     background-color: ${props => props.theme.cores.dark.b};
@@ -40,6 +41,7 @@ const BotaoSecundarioEstilizado = styled.button`
   line-height: 20px;
   margin: ${props => props.concluido ? '0 auto' : '0px'};
   padding: 10px ${props => props.theme.espacamentos.s};
+  text-decoration: none;
 
   &:hover {
     border-color: ${props => props.theme.cores.dark.b};
