@@ -38,6 +38,7 @@ const BotaoSecundarioEstilizado = styled.button`
   font-weight: 700;
   gap: ${props => props.theme.espacamentos.xs};
   line-height: 20px;
+  margin: ${props => props.concluido ? '0 auto' : '0px'};
   padding: 10px ${props => props.theme.espacamentos.s};
 
   &:hover {
@@ -50,7 +51,7 @@ const BotaoSecundarioEstilizado = styled.button`
   }
 `;
 
-export const Botao = ({ children, variante = 'primaria' }) => {
+export const Botao = ({ children, variante = 'primaria', concluido = false }) => {
   if (variante === 'primaria') {
     return (
       <BotaoPrimarioEstilizado>
@@ -60,7 +61,7 @@ export const Botao = ({ children, variante = 'primaria' }) => {
   }
 
   return (
-    <BotaoSecundarioEstilizado>
+    <BotaoSecundarioEstilizado concluido={concluido}>
       {children}
     </BotaoSecundarioEstilizado>
   );

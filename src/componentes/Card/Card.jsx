@@ -6,7 +6,6 @@ const DivEstilizada = styled.div`
   border-color: ${props => props.theme.cores.primarias.a};
   border-radius: ${props => props.theme.espacamentos.s};
   padding: ${props => props.theme.espacamentos.l};
-  text-align: center;
 `;
 
 export const Card = ({ children }) => {
