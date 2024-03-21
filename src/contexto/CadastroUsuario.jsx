@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { createContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const usuarioInicial = {
   perfil: '',
@@ -14,6 +15,7 @@ const usuarioInicial = {
 
 export const CadastroUsuarioContext = createContext({
   usuario: usuarioInicial,
+  erros: {},
   setPerfil: () => null,
   setInteresse: () => null,
   setNomeCompleto: () => null,
@@ -22,14 +24,17 @@ export const CadastroUsuarioContext = createContext({
   setEmail: () => null,
   setSenha: () => null,
   setSenhaConfirmada: () => null,
+  submeterUsuario: () => null
 });
 
 export const useCadastroUsuarioContext = () => {
-  return useState(CadastroUsuarioContext);
+  return useContext(CadastroUsuarioContext);
 };
 
 export const CadastroUsuarioProvider = ({ children }) => {
+  const navegar = useNavigate();
   const [usuario, setUsuario] = useState(usuarioInicial);
+
   const setPerfil = (perfil) => {
     setUsuario(estadoAnterior => {
       return {
@@ -95,6 +100,30 @@ export const CadastroUsuarioProvider = ({ children }) => {
     });
   };
 
+  const submeterUsuario = () => {
+    if (usuario.senha.length < 8) {
+      return alert('Senha deve conter pelo menos 8 caracteres');
+    }
+
+    if (usuario.senhaConfirmada !== usuario.senha) {
+      return alert('Senhas estão diferentes. Favor verificar!');
+    }
+
+    if (usuario.uf === '') {
+      return alert('Favor selecionar o estado.');
+    }
+
+    navegar('/cadastro/concluido');
+  };
+
+  const possoSelecionarInteresse = () => {
+    return !!usuario.perfil;
+  };
+
+  const possoRealizarCadastro = () => {
+    return !!usuario.interesse;
+  };
+
   const contexto = {
     usuario,
     setPerfil,
@@ -104,7 +133,10 @@ export const CadastroUsuarioProvider = ({ children }) => {
     setCidade,
     setEmail,
     setSenha,
-    setSenhaConfirmada
+    setSenhaConfirmada,
+    submeterUsuario,
+    possoSelecionarInteresse,
+    possoRealizarCadastro
   };
 
   return (

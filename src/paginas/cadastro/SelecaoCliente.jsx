@@ -3,11 +3,14 @@ import { Tipografia } from '../../componentes/Tipografia/Tipografia';
 import { Link } from '../../componentes/Link/Link';
 import { Link as RouterLink } from 'react-router-dom';
 import CabecalhoCadastro from '../../componentes/CabecalhoCadastro/CabecalhoCadastro';
+import { useCadastroUsuarioContext } from '../../contexto/CadastroUsuario';
 
 import cliente from './assets/cliente.png';
 import freela from './assets/freela.png';
 
 const SelecaoCliente = () => {
+  const { setPerfil } = useCadastroUsuarioContext();
+
   return (
     <div style={{ textAlign: 'center' }}>
       <CabecalhoCadastro
@@ -16,7 +19,7 @@ const SelecaoCliente = () => {
       />
       <Row>
         <Col md={6} sm={12}>
-          <RouterLink to='interesses' style={{ textDecoration: 'none', color: 'inherit' }}>
+          <RouterLink to='interesses' onClick={() => setPerfil('cliente')} style={{ textDecoration: 'none', color: 'inherit' }}>
             <img src={cliente} alt="" />
             <Tipografia variante='body' componente='body'>
               Sou cliente e preciso de um freela!

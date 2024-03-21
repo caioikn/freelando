@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { FreelandoLogo } from '../Icones/IconeFreelando';
+import { Link } from 'react-router-dom';
 
 const HeaderEstilizada = styled.header`
   align-items: center;
@@ -27,7 +28,9 @@ const ButtonEstilizado = styled.button`
 export const Cabecalho = () => {
   return (
     <HeaderEstilizada>
-      <FreelandoLogo />
+      <Link to='/cadastro'>
+        <FreelandoLogo />
+      </Link>
       <ButtonEstilizado>Login</ButtonEstilizado>
     </HeaderEstilizada>
   );
