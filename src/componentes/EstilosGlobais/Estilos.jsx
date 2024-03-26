@@ -7,7 +7,8 @@ const estilos = tema => {
     },
     body: {
       margin: 0,
-      padding: 0
+      padding: 0,
+      overflowX: 'hidden'
     },
   };
 };

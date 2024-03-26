@@ -8,12 +8,12 @@ const tema = {
     primarias: {
       a: '#5754ED',
       b: '#D93114',
-      c: ''
+      c: '#168070'
     },
     secundarias: {
       a: '#F8F8FD',
       b: '',
-      c: ''
+      c: '#EBFCF9'
     },
     neutras: {
       a: '#373737',

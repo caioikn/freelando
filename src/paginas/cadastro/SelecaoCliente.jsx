@@ -1,4 +1,4 @@
-import { Col, Row } from 'react-grid-system';
+import { Col, Container, Row } from 'react-grid-system';
 import { Tipografia } from '../../componentes/Tipografia/Tipografia';
 import { Link } from '../../componentes/Link/Link';
 import { Link as RouterLink } from 'react-router-dom';
