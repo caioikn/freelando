@@ -109,18 +109,6 @@ export const CadastroUsuarioProvider = ({ children }) => {
       .catch(erro => {
         console.error(erro);
       });
-
-    // if (usuario.senha.length < 8) {
-    //   return alert('Senha deve conter pelo menos 8 caracteres');
-    // }
-
-    // if (usuario.senhaConfirmada !== usuario.senha) {
-    //   return alert('Senhas estão diferentes. Favor verificar!');
-    // }
-
-    // if (usuario.uf === '') {
-    //   return alert('Favor selecionar o estado.');
-    // }
   };
 
   const possoSelecionarInteresse = () => {
