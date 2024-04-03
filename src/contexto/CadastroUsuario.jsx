@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useContext, useState } from 'react';
 import { createContext } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -101,19 +102,25 @@ export const CadastroUsuarioProvider = ({ children }) => {
   };
 
   const submeterUsuario = () => {
-    if (usuario.senha.length < 8) {
-      return alert('Senha deve conter pelo menos 8 caracteres');
-    }
+    axios.post('http://localhost:8080/auth/register', usuario)
+      .then(() => {
+        navegar('/cadastro/concluido');
+      })
+      .catch(erro => {
+        console.error(erro);
+      });
 
-    if (usuario.senhaConfirmada !== usuario.senha) {
-      return alert('Senhas estão diferentes. Favor verificar!');
-    }
+    // if (usuario.senha.length < 8) {
+    //   return alert('Senha deve conter pelo menos 8 caracteres');
+    // }
 
-    if (usuario.uf === '') {
-      return alert('Favor selecionar o estado.');
-    }
+    // if (usuario.senhaConfirmada !== usuario.senha) {
+    //   return alert('Senhas estão diferentes. Favor verificar!');
+    // }
 
-    navegar('/cadastro/concluido');
+    // if (usuario.uf === '') {
+    //   return alert('Favor selecionar o estado.');
+    // }
   };
 
   const possoSelecionarInteresse = () => {
