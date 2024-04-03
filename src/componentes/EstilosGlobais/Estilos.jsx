@@ -10,6 +10,9 @@ const estilos = tema => {
       padding: 0,
       overflowX: 'hidden'
     },
+    a: {
+      textDecoration: 'none'
+    }
   };
 };
 

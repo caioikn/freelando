@@ -20,7 +20,11 @@ export const Cabecalho = () => {
             </RouterLink>
           </Col>
           <Col style={{ textAlign: 'right' }}>
-            <Link>Login</Link>
+            <RouterLink to='/login'>
+              <Link>
+                Login
+              </Link>
+            </RouterLink>
           </Col>
         </Row>
       </Container>
