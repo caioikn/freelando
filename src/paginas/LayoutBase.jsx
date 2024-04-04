@@ -2,10 +2,10 @@ import { Outlet } from 'react-router-dom';
 import { Cabecalho } from '../componentes/Cabecalho/Cabecalho';
 import { Rodape } from '../componentes/Rodape/Rodape';
 
-const LayoutBase = ({ children }) => {
+const LayoutBase = ({ children, logado = false }) => {
   return (
     <>
-      <Cabecalho />
+      <Cabecalho logado={logado} />
       <Outlet />
       {children}
       <Rodape />
