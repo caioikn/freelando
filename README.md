@@ -1,7 +1,7 @@
 # Freelando
 
 <p align="center">
-     <img alt="Static Badge" src="https://img.shields.io/badge/Status-Em_Desenvolvimento-green?style=for-the-badge">
+     <img loading="lazy" alt="Static Badge" src="https://img.shields.io/badge/Status-Conclu%C3%ADdo-blue?style=for-the-badge">
 </p>
 
 O Freelando é um projeto que foi inicialmente criado para aprender a desenvolver componentes customizados e acessíveis com Emotion e React.
@@ -29,7 +29,13 @@ npm install
 ```
 Em seguida, digite para rodar o projeto:
 ```
-npm start
+npm run dev
+```
+Também é necessário baixar a API do Freelando, que pode ser encontrado acessando [este link](https://github.com/alura-cursos/api-freelando).
+
+Clone o repositório utilizando o mesmo comando e, em seguida, rode utilizando o comando:
+```
+npm run start
 ```
 
 ## 🔗 Links
