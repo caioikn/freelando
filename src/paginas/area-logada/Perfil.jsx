@@ -4,6 +4,8 @@ import { Card } from '../../componentes/Card/Card';
 import { Tipografia } from '../../componentes/Tipografia/Tipografia';
 import { CampoTexto } from '../../componentes/CampoTexto/CampoTexto';
 import { Botao } from '../../componentes/Botao/Botao';
+import { useEffect, useState } from 'react';
+import http from '../../http';
 
 import banner from './assets/perfil-bg.png';
 import iconeSalvar from './assets/salvar.svg';
@@ -28,6 +30,14 @@ const FormEstilizado = styled.form`
 `;
 
 const Perfil = () => {
+  const [dados, setDados] = useState([]);
+
+  useEffect(() => {
+    http.get('profile')
+      .then(resposta => setDados(resposta.data))
+      .catch(erro => console.error(erro));
+  }, []);
+
   return (
     <>
       <TituloEstilizado>
@@ -38,7 +48,7 @@ const Perfil = () => {
           <Col sm={12} lg={4}>
             <Card>
               <div style={{ textAlign: 'center' }}>
-                <Tipografia variante='h2' componente='h2'>Nome Completo</Tipografia>
+                <Tipografia variante='h2' componente='h2'>{dados.nomeCompleto}</Tipografia>
                 <img src={avatar} alt='Foto do usuário.' />
               </div>
             </Card>

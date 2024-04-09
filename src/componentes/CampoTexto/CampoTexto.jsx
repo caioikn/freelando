@@ -25,7 +25,7 @@ const InputEstilizado = styled.input`
   width: 100%;
 `;
 
-export const CampoTexto = ({ titulo, valor, onChange, tipo = 'text', required = true }) => {
+export const CampoTexto = ({ titulo, valor, onChange, tipo = 'text' }) => {
   return (
     <LabelEstilizada>
       {titulo}

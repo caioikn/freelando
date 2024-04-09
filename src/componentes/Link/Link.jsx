@@ -25,17 +25,23 @@ const LinkSecundario = styled.span`
     }
 `;
 
-export const Link = ({ children, variante = 'primario' }) => {
+export const Link = ({ children, variante = 'primario', onClick = null }) => {
+  const lidaComOClick = () => {
+    if (onClick) {
+      onClick();
+    }
+  };
+
   if (variante === 'primario') {
     return (
-      <LinkPrimario variante={variante}>
+      <LinkPrimario onClick={lidaComOClick} variante={variante}>
         {children}
       </LinkPrimario>
     );
   }
 
   return (
-    <LinkSecundario variante={variante}>
+    <LinkSecundario onClick={lidaComOClick} variante={variante}>
       {children}
     </LinkSecundario>)
     ;

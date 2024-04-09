@@ -3,6 +3,7 @@ import { FreelandoLogo } from '../Icones/IconeFreelando';
 import { Col, Container, Row } from 'react-grid-system';
 import { Link } from '../Link/Link';
 import { Link as RouterLink } from 'react-router-dom';
+import { ArmazenadorToken } from '../../utils/ArmazenadorTokes';
 
 import avatar from '../../../public/avatar.png';
 
@@ -53,8 +54,8 @@ export const Cabecalho = ({ logado }) => {
                     </Link>
                   </RouterLink>
                   <ImagemEstilizadda src={avatar} alt="Ícone ed usuário." />
-                  <RouterLink to='./'>
-                    <Link>
+                  <RouterLink to={'/login'}>
+                    <Link onClick={() => ArmazenadorToken.efetuarLogout()}>
                       Sair
                     </Link>
                   </RouterLink>

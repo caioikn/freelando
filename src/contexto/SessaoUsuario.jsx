@@ -1,6 +1,7 @@
 import { createContext, useContext } from 'react';
 import http from '../http';
 import { ArmazenadorToken } from '../utils/ArmazenadorTokes';
+import { useNavigate } from 'react-router-dom';
 
 const SessaoUsuarioContext = createContext({
   usuarioLogado: false,
@@ -24,6 +25,10 @@ export const SessaoUsuarioProvider = ({ children }) => {
           resposta.data.access_token,
           resposta.data.refresh_token
         );
+
+        if (resposta.status === 201) {
+          window.location.href = '/area-logada/perfil';
+        }
       })
       .catch(erro => console.error(erro));
   };
